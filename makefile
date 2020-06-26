@@ -5,7 +5,11 @@ CFLAGS=$(shell pkg-config --cflags --libs /usr/lib/pkgconfig/opencv4.pc)
 
 build: $(SRC)
 	mkdir -p build
-	g++ src/main.cpp $(CFLAGS) -o build/mvrbow
+	g++ src/main.cpp $(CFLAGS) -g -o build/mvrbow
 
-run: build
-	@ build/mvrbow $(HOME)/Downloads/movie.mkv
+release: $(SRC)
+	mkdir -p build
+	g++ src/main.cpp $(CFLAGS) -O2 -o build/mvrbow
+
+run:
+	build/mvrbow $(HOME)/Downloads/movie.mp4
