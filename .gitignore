@@ -1,3 +1,7 @@
 build
 img
+out
 .vscode/**
+
+*.pdf
+*.gz

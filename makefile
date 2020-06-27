@@ -13,3 +13,6 @@ release: $(SRC)
 
 run:
 	build/mvrbow $(HOME)/Downloads/movie.mp4
+
+image:
+	pdflatex -output-directory=out template.tex
